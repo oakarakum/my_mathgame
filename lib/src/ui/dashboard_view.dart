@@ -7,6 +7,7 @@ import 'package:fluttericon/elusive_icons.dart';
 import 'package:fluttericon/fontelico_icons.dart';
 
 import 'package:fluttericon/typicons_icons.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DashboardView extends StatefulWidget {
   const DashboardView({super.key});
@@ -66,22 +67,34 @@ class _DashboardViewState extends State<DashboardView> {
                 ],
               ),
               SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Container(
-                      height: 200,
-                      width: 200,
-                      child: Image.asset(
-                        "assets/dashboard_assets/eins.jpeg",
-                        color: Colors.black,
-                        fit: BoxFit.contain,
-                      )),
-                  Text(
-                    "Math \n\n\nGames",
-                    style: TextStyle(color: Color(0xffC94f7C)),
-                  )
-                ],
+              Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    border: Border.all(width: 2, color: Color(0xffC94f7C))),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10),
+                      child: Container(
+                        height: 200,
+                        width: 150,
+                        child: Image.asset(
+                          "assets/dashboard_assets/eins.jpeg",
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 20),
+                      child: Text("Math\n\n        Games",
+                          style: GoogleFonts.aclonica(
+                              color: Color(0xffC94f7C), fontSize: 25)
+                          //TextStyle(color: Color(0xffC94f7C), fontSize: 25),
+                          ),
+                    )
+                  ],
+                ),
               )
             ],
           ),
