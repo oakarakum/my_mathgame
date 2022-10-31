@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_mathgame/src/ui/dashboard_view.dart';
+
+
+import 'src/ui/dashboard/dashboard_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
           primarySwatch: Colors.blue,
-          scaffoldBackgroundColor: Color(0xff0C0D15)),
+          scaffoldBackgroundColor: Colors.black),
       home: DashboardView(),
     );
   }
