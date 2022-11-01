@@ -8,6 +8,8 @@ import 'package:fluttericon/fontelico_icons.dart';
 
 import 'package:fluttericon/typicons_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_mathgame/src/ui/mathpuzzlelist/mathpuzzlelist.dart';
+import 'package:my_mathgame/src/ui/quick_calc_game/quick_calc_game.dart';
 
 class DashboardView extends StatefulWidget {
   const DashboardView({super.key});
@@ -33,7 +35,7 @@ class _DashboardViewState extends State<DashboardView> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 InkWell(
-                  splashColor: Colors.grey,
+                  splashColor: Colors.black,
                   onTap: () {},
                   child: Row(children: [
                     Icon(
@@ -104,48 +106,55 @@ class _DashboardViewState extends State<DashboardView> {
               ),
             ),
             SizedBox(height: 20),
-            SizedBox(height: 300,
+            SizedBox(
+              height: 300,
               child: ListView.builder(
-                itemCount: 2,
-                itemBuilder: ((context, index) {
-                return InkWell(
-                onTap: () {},
-                child: Column(
-                  children: [
-                    Container(
-                      height: 100,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(colors: [
-                          Colors.purple,
-                          Colors.pink,
-                          Colors.red,
-                        ]),
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Row(
+                  itemCount: 2,
+                  itemBuilder: ((context, index) {
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MathPuzzleList()));
+                      },
+                      child: Column(
                         children: [
-                          Image.asset("assets/dashboard_assets/fourEq.png"),
-                          ShaderMask(
-                            shaderCallback: (rect) => LinearGradient(
-                              tileMode: TileMode.clamp,
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                              colors: [Colors.indigoAccent, Colors.pink],
-                            ).createShader(rect),
-                            child: Text("Math Puzzle Games",
-                                style: GoogleFonts.aldrich(
-                                    color: Color(0xffC94f7C), fontSize: 23)),
+                          Container(
+                            height: 100,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(colors: [
+                                Colors.purple,
+                                Colors.pink,
+                                Colors.red,
+                              ]),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                    "assets/dashboard_assets/fourEq.png"),
+                                ShaderMask(
+                                  shaderCallback: (rect) => LinearGradient(
+                                    tileMode: TileMode.clamp,
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                    colors: [Colors.indigoAccent, Colors.pink],
+                                  ).createShader(rect),
+                                  child: Text("Math Puzzle Games",
+                                      style: GoogleFonts.aldrich(
+                                          color: Color(0xffC94f7C),
+                                          fontSize: 23)),
+                                ),
+                              ],
+                            ),
                           ),
+                          SizedBox(height: 10),
                         ],
                       ),
-                    ),
-                    SizedBox(height: 10),
-                  ],
-                ),
-              
-              );
-              })),
+                    );
+                  })),
             )
             //SizedBox(height: 10),
             /* InkWell(

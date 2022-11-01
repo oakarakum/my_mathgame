@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:my_mathgame/src/ui/appbar/defaultappbar.dart';
 
 class QuickCalculationGame extends StatefulWidget {
   const QuickCalculationGame({super.key});
@@ -15,7 +14,10 @@ class _QuickCalculationGameState extends State<QuickCalculationGame> {
     return Scaffold(
       body: Column(
         children: [
-          
+          DefaultAppbar(),
+          Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column())
         ],
       ),
     );
