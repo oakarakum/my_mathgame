@@ -16,6 +16,10 @@ class _MathPuzzleListState extends State<MathPuzzleList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 0,
+        backgroundColor: Color(0xff00b686),
+      ),
       body: Column(
         children: [
           DefaultAppbar(),
@@ -52,10 +56,36 @@ class _MathPuzzleListState extends State<MathPuzzleList> {
                           height: 90,
                           width: 90,
                         ),
-                        Text(
-                          "Quick Calculation Game",
-                          style: GoogleFonts.oswald(
-                              color: Color(0xffb64fc8), fontSize: 25),
+                        Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 10),
+                              child: Text(
+                                "Quick Calculation Game",
+                                style: GoogleFonts.oswald(
+                                    color: Color(0xffb64fc8), fontSize: 25),
+                              ),
+                            ),
+                            Container(
+                                margin: EdgeInsets.symmetric(
+                                    vertical: 10, horizontal: 10),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Text(
+                                      "Your Top Score:",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    SizedBox(width: 7),
+                                    SvgPicture.asset(
+                                        "assets/dashboard_assets/ic_trophy.svg"),
+                                    SizedBox(width: 7),
+                                    Text("000",
+                                        style: TextStyle(color: Colors.white))
+                                  ],
+                                ))
+                          ],
                         )
                       ],
                     ),

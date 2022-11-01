@@ -3,16 +3,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttericon/elusive_icons.dart';
-import 'package:fluttericon/iconic_icons.dart';
 
-class DefaultAppbar extends StatefulWidget {
-  const DefaultAppbar({super.key});
+class GameAppbar extends StatefulWidget {
+  const GameAppbar({super.key});
 
   @override
-  State<DefaultAppbar> createState() => _DefaultAppbarState();
+  State<GameAppbar> createState() => _GameAppbarState();
 }
 
-class _DefaultAppbarState extends State<DefaultAppbar> {
+class _GameAppbarState extends State<GameAppbar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -31,21 +30,31 @@ class _DefaultAppbarState extends State<DefaultAppbar> {
               size: 30,
             )),
       ),
+      centerTitle: true,
+      title: Container(
+        height: 30,
+        width: 75,
+        margin: EdgeInsets.only(right: 8),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+          SvgPicture.asset(
+            "assets/dashboard_assets/ic_trophy.svg",
+          ),
+          Text(
+            "000",
+            style: TextStyle(color: Colors.white, fontSize: 18),
+          )
+        ]),
+      ),
       actions: [
+        //PauseButton
         Container(
+          margin: EdgeInsets.only(right: 10),
           height: 30,
-          width: 75,
-          margin: EdgeInsets.only(right: 8),
-          child:
-              Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-            SvgPicture.asset(
-              "assets/dashboard_assets/ic_trophy.svg",
-            ),
-            Text(
-              "000",
-              style: TextStyle(color: Colors.white, fontSize: 18),
-            )
-          ]),
+          width: 30,
+          child: Icon(
+            Elusive.pause,
+            color: Colors.white,
+          ),
         ),
       ],
       shape: RoundedRectangleBorder(

@@ -56,11 +56,8 @@ class _DashboardViewState extends State<DashboardView> {
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Icon(
-                          Icons.star,
-                          color: Colors.yellow,
-                          size: 30,
-                        ),
+                        SvgPicture.asset(
+                            "assets/dashboard_assets/ic_trophy.svg"),
                         Text(
                           "000",
                           style: TextStyle(color: Colors.white, fontSize: 15),
