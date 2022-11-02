@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttericon/elusive_icons.dart';
-import 'package:fluttericon/iconic_icons.dart';
 
 class DefaultAppbar extends StatefulWidget {
   const DefaultAppbar({super.key});
@@ -39,7 +38,7 @@ class _DefaultAppbarState extends State<DefaultAppbar> {
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
             SvgPicture.asset(
-              "assets/dashboard_assets/ic_trophy.svg",
+              "assets/images/ic_trophy.svg",
             ),
             Text(
               "000",

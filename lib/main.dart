@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'src/ui/dashboard/dashboard_view.dart';
 
 void main() {

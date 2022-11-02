@@ -37,7 +37,7 @@ class _GameAppbarState extends State<GameAppbar> {
         margin: EdgeInsets.only(right: 8),
         child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
           SvgPicture.asset(
-            "assets/dashboard_assets/ic_trophy.svg",
+            "assets/images/ic_trophy.svg",
           ),
           Text(
             "000",

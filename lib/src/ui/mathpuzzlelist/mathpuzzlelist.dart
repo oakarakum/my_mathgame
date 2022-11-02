@@ -51,7 +51,7 @@ class _MathPuzzleListState extends State<MathPuzzleList> {
                     child: Row(
                       children: [
                         SvgPicture.asset(
-                          "assets/dashboard_assets/beyin-1.svg",
+                          "assets/images/beyin-1.svg",
                           color: Color(0xffb64fc8),
                           height: 90,
                           width: 90,
@@ -79,7 +79,7 @@ class _MathPuzzleListState extends State<MathPuzzleList> {
                                     ),
                                     SizedBox(width: 7),
                                     SvgPicture.asset(
-                                        "assets/dashboard_assets/ic_trophy.svg"),
+                                        "assets/images/ic_trophy.svg"),
                                     SizedBox(width: 7),
                                     Text("000",
                                         style: TextStyle(color: Colors.white))

@@ -1,11 +1,14 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttericon/elusive_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_mathgame/src/ui/appbar/game_appbar.dart';
 import 'package:my_mathgame/src/ui/quick_calc_game/quick_cal_game_gridview.dart';
+import 'package:my_mathgame/src/ui/quick_calc_game/quick_calc_game_bottomsheet.dart';
+import 'package:my_mathgame/src/ui/quick_calc_game/quick_calc_game_popup_gameover.dart';
+import 'package:my_mathgame/src/ui/quick_calc_game/quick_calc_game_popup_pause.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class QuickCalculationGame extends StatefulWidget {
   const QuickCalculationGame({super.key});
@@ -22,46 +25,95 @@ class _QuickCalculationGameState extends State<QuickCalculationGame> {
         toolbarHeight: 0,
         backgroundColor: Color(0xff00b686),
       ),
-      body: Column(
-        children: [
-          GameAppbar(),
-          Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                children: [
-                  SizedBox(height: 15),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Next",
-                          style: TextStyle(color: Colors.grey, fontSize: 15))
-                    ],
-                  ),
-                  SizedBox(
-                    height: 200,
-                    child: Row(
+      body: Stack(children: [
+        Column(
+          children: [
+            GameAppbar(),
+            Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    SizedBox(height: 10),
+                    Row(
+                      //kum saati
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 5),
+                          child: Column(
+                            children: [
+                              Text("Next",
+                                  style: TextStyle(
+                                      color: Colors.grey, fontSize: 15)),
+                              Text("5 + 1",
+                                  style: TextStyle(
+                                      color: Colors.grey, fontSize: 15))
+                            ],
+                          ),
+                        ),
+                        CircularPercentIndicator(
+                            progressColor: Color(0xff00b686),
+                            radius: 50.0,
+                            lineWidth: 7.0,
+                            animation: true,
+                            percent: 0.7,
+                            center: Image.asset(
+                              "assets/gif/bluehourglass.gif",
+                              height: 45,
+                            )),
+                      ],
+                    ),
+                    SizedBox(height: 45),
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          "Tutorial",
-                          style: TextStyle(color: Colors.grey, fontSize: 15),
+                          "8",
+                          style: TextStyle(color: Colors.white, fontSize: 30),
                         ),
-                        SizedBox(width: 15),
-                        Icon(
-                          Elusive.info_circled,
-                          size: 20,
-                          color: Colors.grey,
+                        SizedBox(width: 5),
+                        Text(
+                          "*",
+                          style: TextStyle(color: Colors.white, fontSize: 30),
+                        ),
+                        SizedBox(width: 5),
+                        Text(
+                          "1",
+                          style: TextStyle(color: Colors.white, fontSize: 30),
+                        ),
+                        SizedBox(width: 5),
+                        Text(
+                          "=",
+                          style: TextStyle(color: Colors.white, fontSize: 30),
+                        ),
+                        SizedBox(width: 5),
+                        Container(
+                          height: 70,
+                          width: 70,
+                          decoration: BoxDecoration(
+                              color: Color(0xff00b686),
+                              borderRadius: BorderRadius.circular(15)),
+                          child: Center(
+                            child: Text(
+                              "8",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 30),
+                            ),
+                          ),
                         )
                       ],
                     ),
-                  ),
-                  //SizedBox(height: 100),
-                  SizedBox(height: 460, width: 500, child: GridViewKeypad())
-                ],
-              ))
-        ],
-      ),
+                    SizedBox(height: 60),
+                    quickCalcTutorial(),
+                    SizedBox(height: 30),
+                    SizedBox(height: 380, width: 500, child: GridViewKeypad())
+                  ],
+                ))
+          ],
+        ),
+        QuickCalcPopupPause(),
+        QuickCalcPopupGameOver()
+      ]),
     );
   }
 }

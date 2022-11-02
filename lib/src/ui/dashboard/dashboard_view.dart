@@ -56,8 +56,7 @@ class _DashboardViewState extends State<DashboardView> {
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        SvgPicture.asset(
-                            "assets/dashboard_assets/ic_trophy.svg"),
+                        SvgPicture.asset("assets/images/ic_trophy.svg"),
                         Text(
                           "000",
                           style: TextStyle(color: Colors.white, fontSize: 15),
@@ -80,7 +79,7 @@ class _DashboardViewState extends State<DashboardView> {
                       height: 200,
                       width: 150,
                       child: Image.asset(
-                        "assets/dashboard_assets/eins.jpeg",
+                        "assets/images/eins.jpeg",
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -106,7 +105,7 @@ class _DashboardViewState extends State<DashboardView> {
             SizedBox(
               height: 300,
               child: ListView.builder(
-                  itemCount: 2,
+                  itemCount: 1,
                   itemBuilder: ((context, index) {
                     return InkWell(
                       onTap: () {
@@ -130,8 +129,7 @@ class _DashboardViewState extends State<DashboardView> {
                             ),
                             child: Row(
                               children: [
-                                Image.asset(
-                                    "assets/dashboard_assets/fourEq.png"),
+                                Image.asset("assets/images/fourEq.png"),
                                 ShaderMask(
                                   shaderCallback: (rect) => LinearGradient(
                                     tileMode: TileMode.clamp,
@@ -153,48 +151,6 @@ class _DashboardViewState extends State<DashboardView> {
                     );
                   })),
             )
-            //SizedBox(height: 10),
-            /* InkWell(
-              onTap: () {},
-              child: Container(
-                height: 100,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [
-                    Colors.purple,
-                    Colors.pink,
-                    Colors.red,
-                  ]),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10),
-                      child: SizedBox(width: 80,height: 80,
-                          child: Image.asset(
-                              "assets/dashboard_assets/brain_on_fire.jpg",
-                              fit: BoxFit.cover,
-                              )),
-                    ),
-                    ShaderMask(
-                      shaderCallback: (rect) => LinearGradient(
-                        tileMode: TileMode.clamp,
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [Colors.indigoAccent, Colors.pink],
-                      ).createShader(rect),
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10),
-                        child: Text("Mind Puzzle Games",
-                            style: GoogleFonts.aldrich(
-                                color: Color(0xffC94f7C), fontSize: 23)),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ) */
           ],
         ),
       ),
