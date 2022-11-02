@@ -28,18 +28,25 @@ class _QuickCalcPopupPauseState extends State<QuickCalcPopupPause> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
-                      "Calculation",
-                      style: TextStyle(color: Colors.white, fontSize: 25),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5),
+                      child: Text(
+                        "Calculator",
+                        style: TextStyle(color: Colors.white, fontSize: 22),
+                      ),
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pop(context);
+                        
                       },
                       child: Container(
-                        color: Colors.black,
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(20)),
                         child: Center(
                           child: Icon(
                             Icons.close,
@@ -51,47 +58,65 @@ class _QuickCalcPopupPauseState extends State<QuickCalcPopupPause> {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 15,
-              ),
-              Text(
-                "Your current score is 0.0",
-                style: TextStyle(
-                    fontSize: 15, color: Color.fromARGB(255, 185, 176, 176)),
+              SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.only(right: 20
+                ),
+                child: Text(
+                  "Your current score is 0.0",
+                  style: TextStyle(
+                      fontSize: 15, color: Color.fromARGB(255, 185, 176, 176)),
+                ),
               ),
               SizedBox(height: 28),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.orange,
-                        foregroundColor: Colors.white),
-                    child: Text(
-                      "Resume",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    style: ElevatedButton.styleFrom(
-                        minimumSize: Size(100, 30),
-                        backgroundColor: Colors.orange,
-                        foregroundColor: Colors.white),
-                    child: Icon(Icons.replay),
-                  ),
-                ],
-              )
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 200,
+                          height: 50,
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 20),
+                            child: GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.orange),
+                                child: Center(
+                                  child: Text(
+                                    "Resume",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 20),
+                        GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.orange),
+                              child: Icon(
+                                Icons.restart_alt,
+                                color: Colors.white,
+                                size: 30,
+                              )),
+                        ),
             ],
           ),
-        ),
+        ]),
       ),
-    );
+    ));
   }
 }
