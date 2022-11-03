@@ -24,14 +24,24 @@ class quickCalcTutorial extends StatelessWidget {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 5),
-                Text("Calculator",
-                    style:
-                        GoogleFonts.inter(color: Colors.white, fontSize: 25)),
+                SizedBox(height: 10),
+                SizedBox(
+                  child: Text("Calculator",
+                      style:
+                          GoogleFonts.inter(color: Colors.white, fontSize: 25)),
+                ),
                 SizedBox(height: 20),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25),
-                  child: Image.asset("assets/gif/quick-calculation-intro.gif"),
+                Container(
+                  height: 200,
+                  width: 300,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.black,
+                      image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage(
+                            "assets/gif/quick-calculation-intro.gif",
+                          ))),
                 ),
                 SizedBox(height: 10),
                 Text(

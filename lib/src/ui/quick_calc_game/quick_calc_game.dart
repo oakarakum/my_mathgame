@@ -1,8 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fluttericon/elusive_icons.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:my_mathgame/src/ui/appbar/game_appbar.dart';
 import 'package:my_mathgame/src/ui/quick_calc_game/quick_cal_game_gridview.dart';
 import 'package:my_mathgame/src/ui/quick_calc_game/quick_calc_game_bottomsheet.dart';
@@ -53,10 +50,16 @@ class _QuickCalculationGameState extends State<QuickCalculationGame> {
                         ),
                         CircularPercentIndicator(
                             progressColor: Color(0xff00b686),
+                            restartAnimation: false,
+                            backgroundColor: Colors.white,
+                            animationDuration: 10000,
                             radius: 50.0,
                             lineWidth: 7.0,
                             animation: true,
-                            percent: 0.7,
+                            percent: 1,
+                            arcType: ArcType.FULL,
+                            arcBackgroundColor: Colors.white,
+                            reverse: true,
                             center: Image.asset(
                               "assets/gif/bluehourglass.gif",
                               height: 45,
