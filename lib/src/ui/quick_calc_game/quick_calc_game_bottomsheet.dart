@@ -28,7 +28,9 @@ class quickCalcTutorial extends StatelessWidget {
                 SizedBox(
                   child: Text("Calculator",
                       style:
-                          GoogleFonts.inter(color: Colors.white, fontSize: 25)),
+                          GoogleFonts.allura(letterSpacing: 2.3
+                            ,
+                          color: Colors.white, fontSize: 30,fontWeight: FontWeight.w500)),
                 ),
                 SizedBox(height: 20),
                 Container(
@@ -53,9 +55,12 @@ class quickCalcTutorial extends StatelessWidget {
                   style: TextStyle(color: Colors.white, fontSize: 12),
                 ),
                 SizedBox(height: 5),
-                Text(
-                  "-1.0 for wrong answer",
-                  style: TextStyle(color: Colors.white, fontSize: 12),
+                Padding(
+                  padding: const EdgeInsets.only(right:1),
+                  child: Text(
+                    "-1.0 for wrong answer",
+                    style: TextStyle(color: Colors.white, fontSize: 12),
+                  ),
                 ),
                 SizedBox(height: 12),
                 ElevatedButton(

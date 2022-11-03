@@ -6,6 +6,7 @@ import 'package:my_mathgame/src/ui/quick_calc_game/quick_calc_game_bottomsheet.d
 import 'package:my_mathgame/src/ui/quick_calc_game/quick_calc_game_popup_gameover.dart';
 import 'package:my_mathgame/src/ui/quick_calc_game/quick_calc_game_popup_pause.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class QuickCalculationGame extends StatefulWidget {
   const QuickCalculationGame({super.key});
@@ -32,7 +33,7 @@ class _QuickCalculationGameState extends State<QuickCalculationGame> {
                   children: [
                     SizedBox(height: 10),
                     Row(
-                      //kum saati
+                      
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
@@ -48,13 +49,14 @@ class _QuickCalculationGameState extends State<QuickCalculationGame> {
                             ],
                           ),
                         ),
-                        CircularPercentIndicator(
+                         CircularPercentIndicator(
                             progressColor: Color(0xff00b686),
                             restartAnimation: false,
                             backgroundColor: Colors.white,
                             animationDuration: 10000,
                             radius: 50.0,
-                            lineWidth: 7.0,
+                            circularStrokeCap: CircularStrokeCap.round,
+                            lineWidth: 10.0,
                             animation: true,
                             percent: 1,
                             arcType: ArcType.FULL,
@@ -63,7 +65,10 @@ class _QuickCalculationGameState extends State<QuickCalculationGame> {
                             center: Image.asset(
                               "assets/gif/bluehourglass.gif",
                               height: 45,
-                            )),
+                            ),
+                            ), 
+
+                            
                       ],
                     ),
                     SizedBox(height: 45),
