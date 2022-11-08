@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names, unused_import
+
 import 'package:my_mathgame/src/ui/quick_calc_game/quick_calc_game.dart';
 import 'package:my_mathgame/src/ui/quick_calc_game/quick_calc_game_bottomsheet.dart';
 
